@@ -1,0 +1,634 @@
+
+w public repository to your account. Then clone the repository locally. Create 2 branches cloud_dev01. Then add cloud_dev02 to that repository locally and hello.txt , moto.txt and world.txt to one branch and add another 3 files to another branch. Then push cloud_dev02 branch to the Forked repository on the remote.  https://github.com/ripienaar/free-for-dev
+
+root@DESKTOP-DA2RDP0:harsh# git clone git@github.com:HarshitaMeshram/PUB_PROJECT.git
+fatal: destination path 'PUB_PROJECT' already exists and is not an empty directory.
+root@DESKTOP-DA2RDP0:harsh# git init
+Reinitialized existing Git repository in /home/harsh/.git/
+root@DESKTOP-DA2RDP0:harsh#
+root@DESKTOP-DA2RDP0:harsh# ll
+total 56
+drwxr-x--- 6 harsh harsh 4096 Jan  5 18:01 ./
+drwxr-xr-x 3 root  root  4096 Dec 18 17:01 ../
+-rw------- 1 harsh harsh   47 Jan  5 18:39 .bash_history
+-rw-r--r-- 1 harsh harsh  220 Dec 18 17:01 .bash_logout
+-rw-r--r-- 1 harsh harsh 3771 Dec 18 17:01 .bashrc
+drwxr-xr-x 7 root  root  4096 Jan  8 14:33 .git/
+-rw-r--r-- 1 harsh harsh    0 Jan  8 14:06 .motd_shown
+-rw-r--r-- 1 harsh harsh  807 Dec 18 17:01 .profile
+-rw-r--r-- 1 harsh harsh    0 Dec 18 17:03 .sudo_as_admin_successful
+-rw-r--r-- 1 root  root   154 Dec 26 11:07 NEW_FILE
+drwxr-xr-x 4 root  root  4096 Jan  5 18:11 PUB_PROJECT/
+drwxr-xr-x 3 root  root  4096 Jan  5 11:14 admin/
+-rw-r--r-- 1 root  root    99 Dec 19 16:14 file01
+-rw-r--r-- 1 root  root   121 Dec 19 16:16 file02
+-r-------- 1 root  root  1676 Dec 26 13:21 id_rsa
+drwxr-xr-x 3 root  root  4096 Jan  4 13:35 webstore/
+root@DESKTOP-DA2RDP0:harsh#
+root@DESKTOP-DA2RDP0:harsh# cd PUB_PROJECT/
+root@DESKTOP-DA2RDP0:PUB_PROJECT# LL
+^Croot@DESKTOP-DA2RDP0:PUB_PROJECT# ll
+total 288
+drwxr-xr-x 4 root  root    4096 Jan  5 18:11 ./
+drwxr-x--- 6 harsh harsh   4096 Jan  5 18:01 ../
+drwxr-xr-x 8 root  root    4096 Jan  5 18:14 .git/
+drwxr-xr-x 2 root  root    4096 Jan  5 18:02 .github/
+-rw-r--r-- 1 root  root      12 Jan  5 18:02 CNAME
+-rw-r--r-- 1 root  root  265115 Jan  5 18:02 README.md
+-rw-r--r-- 1 root  root       0 Jan  5 18:07 hello.txt
+-rw-r--r-- 1 root  root       0 Jan  5 18:10 hello01.txt
+-rw-r--r-- 1 root  root    3556 Jan  5 18:02 index.html
+-rw-r--r-- 1 root  root     768 Jan  5 18:02 logo.webp
+-rw-r--r-- 1 root  root       0 Jan  5 18:07 moto.txt
+-rw-r--r-- 1 root  root       0 Jan  5 18:11 moto01.txt
+-rw-r--r-- 1 root  root       0 Jan  5 18:08 world.txt
+-rw-r--r-- 1 root  root       0 Jan  5 18:11 world01.txt
+root@DESKTOP-DA2RDP0:PUB_PROJECT#
+root@DESKTOP-DA2RDP0:PUB_PROJECT# git branch -a
+  cloud_dev01
+* cloud_dev02
+  master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/cloud_dev02
+  remotes/origin/master
+root@DESKTOP-DA2RDP0:PUB_PROJECT#
+root@DESKTOP-DA2RDP0:PUB_PROJECT# ll
+total 288
+drwxr-xr-x 4 root  root    4096 Jan  5 18:11 ./
+drwxr-x--- 6 harsh harsh   4096 Jan  5 18:01 ../
+drwxr-xr-x 8 root  root    4096 Jan  5 18:14 .git/
+drwxr-xr-x 2 root  root    4096 Jan  5 18:02 .github/
+-rw-r--r-- 1 root  root      12 Jan  5 18:02 CNAME
+-rw-r--r-- 1 root  root  265115 Jan  5 18:02 README.md
+-rw-r--r-- 1 root  root       0 Jan  5 18:07 hello.txt
+-rw-r--r-- 1 root  root       0 Jan  5 18:10 hello01.txt
+-rw-r--r-- 1 root  root    3556 Jan  5 18:02 index.html
+-rw-r--r-- 1 root  root     768 Jan  5 18:02 logo.webp
+-rw-r--r-- 1 root  root       0 Jan  5 18:07 moto.txt
+-rw-r--r-- 1 root  root       0 Jan  5 18:11 moto01.txt
+-rw-r--r-- 1 root  root       0 Jan  5 18:08 world.txt
+-rw-r--r-- 1 root  root       0 Jan  5 18:11 world01.txt
+root@DESKTOP-DA2RDP0:PUB_PROJECT#
+root@DESKTOP-DA2RDP0:PUB_PROJECT# git push origin cloud_dev02
+Everything up-to-date
+root@DESKTOP-DA2RDP0:PUB_PROJECT#
+root@DESKTOP-DA2RDP0:PUB_PROJECT#
+root@DESKTOP-DA2RDP0:PUB_PROJECT#
+
+
+ 
+
+2. Create a remote repository merge_confilct_demo. Add some files in the remote master branch. Clone the repository locally. Create 2 branches locally named demo/merge and demo/conflicts. Add a merge.txt file in both branches with some data like "Hello CloudEthiX…." And "Fello CloudEthiX…." respectively and commit. Then merge demo/conflicts branch to demo/merge branch and solve the merge conflicts.
+
+root@DESKTOP-DA2RDP0:~# git clone git@github.com:HarshitaMeshram/merge_confilct_demo.git
+fatal: destination path 'merge_confilct_demo' already exists and is not an empty directory.
+root@DESKTOP-DA2RDP0:~#
+root@DESKTOP-DA2RDP0:~# git branch -a
+root@DESKTOP-DA2RDP0:~#
+root@DESKTOP-DA2RDP0:~# git branch
+root@DESKTOP-DA2RDP0:~#
+root@DESKTOP-DA2RDP0:~# ll
+total 172
+drwx------ 16 root root  4096 Jan  8 14:41 ./
+drwxr-xr-x 19 root root  4096 Jan  8 14:06 ../
+drwxr-xr-x  2 root root  4096 Dec 28 11:13 .aws/
+-rw-------  1 root root 22710 Jan  5 18:39 .bash_history
+-rw-r--r--  1 root root  3238 Dec 29 12:06 .bashrc
+drwx------  3 root root  4096 Dec 26 19:01 .config/
+drwxr-xr-x  9 root root  4096 Jan  5 18:21 .git/
+drwxr-xr-x  3 root root  4096 Jan  5 18:29 merge_confilct_demo/
+root@DESKTOP-DA2RDP0:~#
+
+root@DESKTOP-DA2RDP0:~# cd merge_confilct_demo/
+root@DESKTOP-DA2RDP0:merge_confilct_demo# ll
+total 28
+drwxr-xr-x  3 root root 4096 Jan  5 18:29 ./
+drwx------ 16 root root 4096 Jan  8 14:41 ../
+drwxr-xr-x  8 root root 4096 Jan  5 18:37 .git/
+-rw-r--r--  1 root root    7 Jan  5 18:21 File01
+-rw-r--r--  1 root root    8 Jan  5 18:21 File02
+-rw-r--r--  1 root root   42 Jan  5 18:21 README.md
+-rw-r--r--  1 root root   24 Jan  5 18:29 merge.txt
+
+root@DESKTOP-DA2RDP0:merge_confilct_demo# git branch -a
+  demo/conflicts
+* demo/merge
+  main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/demo/conflicts
+  remotes/origin/main
+root@DESKTOP-DA2RDP0:merge_confilct_demo#
+
+root@DESKTOP-DA2RDP0:merge_confilct_demo# git checkout demo/merge
+Already on 'demo/merge'
+root@DESKTOP-DA2RDP0:merge_confilct_demo#  ll
+total 28
+drwxr-xr-x  3 root root 4096 Jan  5 18:29 ./
+drwx------ 16 root root 4096 Jan  8 14:42 ../
+drwxr-xr-x  8 root root 4096 Jan  8 14:43 .git/
+-rw-r--r--  1 root root    7 Jan  5 18:21 File01
+-rw-r--r--  1 root root    8 Jan  5 18:21 File02
+-rw-r--r--  1 root root   42 Jan  5 18:21 README.md
+-rw-r--r--  1 root root   24 Jan  5 18:29 merge.txt
+root@DESKTOP-DA2RDP0:merge_confilct_demo#
+
+root@DESKTOP-DA2RDP0:merge_confilct_demo# vi merge.txt
+
+root@DESKTOP-DA2RDP0:merge_confilct_demo# git checkout demo/conflicts
+Switched to branch 'demo/conflicts'
+root@DESKTOP-DA2RDP0:merge_confilct_demo#
+
+root@DESKTOP-DA2RDP0:merge_confilct_demo# git status
+On branch demo/conflicts
+nothing to commit, working tree clean
+root@DESKTOP-DA2RDP0:merge_confilct_demo#
+
+root@DESKTOP-DA2RDP0:merge_confilct_demo# git branch -a
+* demo/conflicts
+  demo/merge
+  main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/demo/conflicts
+  remotes/origin/main
+root@DESKTOP-DA2RDP0:merge_confilct_demo#
+
+root@DESKTOP-DA2RDP0:merge_confilct_demo# git merge demo/merge
+Auto-merging merge.txt
+CONFLICT (add/add): Merge conflict in merge.txt
+Automatic merge failed; fix conflicts and then commit the result.
+root@DESKTOP-DA2RDP0:merge_confilct_demo#
+
+root@DESKTOP-DA2RDP0:merge_confilct_demo# ll
+total 28
+drwxr-xr-x 3 root  root  4096 Jan  8 14:58 ./
+drwxr-x--- 7 harsh harsh 4096 Jan  8 14:48 ../
+drwxr-xr-x 8 root  root  4096 Jan  8 14:58 .git/
+-rw-r--r-- 1 root  root     7 Jan  8 14:48 File01
+-rw-r--r-- 1 root  root     8 Jan  8 14:48 File02
+-rw-r--r-- 1 root  root    42 Jan  8 14:48 README.md
+-rw-r--r-- 1 root  root    89 Jan  8 14:58 merge.txt
+root@DESKTOP-DA2RDP0:merge_confilct_demo#
+
+root@DESKTOP-DA2RDP0:merge_confilct_demo# vi merge.txt
+root@DESKTOP-DA2RDP0:merge_confilct_demo# cat merge.txt
+<<<<<<< HEAD
+  "Fello CloudEthiX…."
+=======
+ "Hello CloudEthiX…."
+>>>>>>> demo/merge
+root@DESKTOP-DA2RDP0:merge_confilct_demo#
+
+root@DESKTOP-DA2RDP0:merge_confilct_demo# vi merge.txt
+root@DESKTOP-DA2RDP0:merge_confilct_demo# cat merge.txt
+=======
+ "Hello CloudEthiX…."
+>>>>>>> demo/merge
+root@DESKTOP-DA2RDP0:merge_confilct_demo#
+
+root@DESKTOP-DA2RDP0:merge_confilct_demo# git status
+On branch demo/conflicts
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both added:      merge.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+root@DESKTOP-DA2RDP0:merge_confilct_demo#
+
+root@DESKTOP-DA2RDP0:merge_confilct_demo# git add merge.txt
+root@DESKTOP-DA2RDP0:merge_confilct_demo# git commit -m "merge.txt is adding"
+[demo/conflicts d532b57] merge.txt is adding
+root@DESKTOP-DA2RDP0:merge_confilct_demo#
+root@DESKTOP-DA2RDP0:merge_confilct_demo#
+
+ 
+3. Create PR to merge the cloud_dev02 branch to Forked repository. Approve the PR and merge cloud_dev02 branch to master branch remotely.
+
+Done 
+
+PUB_PROJECTPublic
+forked from ripienaar/free-for-dev
+
+ 
+4. Fetch latest changes from master branch of remote forked repository to local master branch. Then merge forked remote master branch with local master branch. Check If all the latest files are there. Then checkout to local cloud_dev03 branch locally. Then Pull latest changes from the remote master branch.
+
+ root@DESKTOP-DA2RDP0:~# git clone git@github.com:HarshitaMeshram/PUB_PROJECT.git
+Cloning into 'PUB_PROJECT'...
+remote: Enumerating objects: 13026, done.
+remote: Counting objects: 100% (83/83), done.
+remote: Compressing objects: 100% (53/53), done.
+remote: Total 13026 (delta 43), reused 63 (delta 30), pack-reused 12943
+Receiving objects: 100% (13026/13026), 7.08 MiB | 2.66 MiB/s, done.
+Resolving deltas: 100% (6762/6762), done.
+root@DESKTOP-DA2RDP0:~#
+root@DESKTOP-DA2RDP0:~# service docker start^C
+root@DESKTOP-DA2RDP0:~# ^C
+root@DESKTOP-DA2RDP0:~# git pull origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+root@DESKTOP-DA2RDP0:~#
+root@DESKTOP-DA2RDP0:~# git pull origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+root@DESKTOP-DA2RDP0:~# ll
+total 180
+drwx------ 17 root root  4096 Jan  8 18:51 ./
+drwxr-xr-x 19 root root  4096 Jan  8 14:46 ../
+drwxr-xr-x  2 root root  4096 Dec 28 11:13 .aws/
+-rw-------  1 root root 23022 Jan  8 14:46 .bash_history
+-rw-r--r--  1 root root  3238 Dec 29 12:06 .bashrc
+drwx------  3 root root  4096 Dec 26 19:01 .config/
+drwxr-xr-x  9 root root  4096 Jan  8 18:52 .git/
+-rw-r--r--  1 root root    92 Jan  4 17:34 .gitconfig
+-rw-r--r--  1 root root     0 Dec 18 17:04 .hushlogin
+-rw-------  1 root root    20 Jan  8 14:58 .lesshst
+drwxr-xr-x  3 root root  4096 Jan  3 12:22 .local/
+-rw-r--r--  1 root root     0 Dec 18 17:03 .motd_shown
+-rw-r--r--  1 root root   161 Jul  9  2019 .profile
+-rw-r--r--  1 root root    66 Jan  3 12:22 .selected_editor
+drwx------  2 root root  4096 Jan  4 17:38 .ssh/
+-rw-r--r--  1 root root     0 Dec 19 16:40 .sudo_as_admin_successful
+-rw-------  1 root root 16812 Jan  8 15:00 .viminfo
+-rw-r--r--  1 root root   222 Dec 18 17:29 01_demo.sh
+drwxr-xr-x  3 root root  4096 Jan  3 15:01 Cloud/
+drwxr-xr-x  4 root root  4096 Jan  8 18:51 PUB_PROJECT/
+drwxr-xr-x  3 root root  4096 Jan  5 12:00 admin/
+drwxrwxrwx  2 root root  4096 Dec 29 14:39 asfi/
+drwxr-xr-x  3 root root  4096 Jan  5 12:15 black/
+-rw-r--r--  1 root root     0 Dec 27 14:22 cloud
+drwxr-xr-x  4 root root  4096 Jan  4 18:40 dark/
+-rwxr-xr-x  1 root root    33 Dec 18 17:12 demo.sh*
+-rw-r--r--  1 root root   108 Dec 18 17:31 demo02
+-rw-r--r--  1 root root   181 Dec 18 17:44 demo03
+-rw-r--r--  1 root root   192 Dec 18 17:46 demo04
+-rw-r--r--  1 root root   288 Dec 18 17:50 demo05
+-rw-r--r--  1 root root    70 Dec 18 17:54 demo06
+-rw-r--r--  1 root root   461 Dec 18 17:56 demo07
+-rw-r--r--  1 root root   111 Dec 18 18:03 demo08
+-rw-r--r--  1 root root    66 Dec 18 18:13 demo09
+-rwxr-xr-x  1 root root   347 Dec 28 14:26 ex.sh*
+drwxr-xr-x  2 root root  4096 Dec 28 12:23 instance/
+drwxr-xr-x  3 root root  4096 Jan  8 14:43 merge_confilct_demo/
+drwxr-xr-x  4 root root  4096 Jan  4 18:01 web/
+drwxr-xr-x  4 root root  4096 Jan  4 17:33 webstore/
+root@DESKTOP-DA2RDP0:~# cd PUB_PROJECT/
+root@DESKTOP-DA2RDP0:PUB_PROJECT# git pull origin master
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 652 bytes | 326.00 KiB/s, done.
+From github.com:HarshitaMeshram/PUB_PROJECT
+ * branch            master     -> FETCH_HEAD
+   719858c..0ab66ab  master     -> origin/master
+Updating 719858c..0ab66ab
+Fast-forward
+ data | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 data
+root@DESKTOP-DA2RDP0:PUB_PROJECT#
+root@DESKTOP-DA2RDP0:PUB_PROJECT# ll
+total 292
+drwxr-xr-x  4 root root   4096 Jan  8 19:06 ./
+drwx------ 17 root root   4096 Jan  8 18:51 ../
+drwxr-xr-x  8 root root   4096 Jan  8 19:06 .git/
+drwxr-xr-x  2 root root   4096 Jan  8 18:51 .github/
+-rw-r--r--  1 root root     12 Jan  8 18:51 CNAME
+-rw-r--r--  1 root root 265115 Jan  8 18:51 README.md
+-rw-r--r--  1 root root     11 Jan  8 19:06 data
+-rw-r--r--  1 root root      0 Jan  8 18:51 hello.txt
+-rw-r--r--  1 root root      0 Jan  8 18:51 hello01.txt
+-rw-r--r--  1 root root   3556 Jan  8 18:51 index.html
+-rw-r--r--  1 root root    768 Jan  8 18:51 logo.webp
+-rw-r--r--  1 root root      0 Jan  8 18:51 moto.txt
+-rw-r--r--  1 root root      0 Jan  8 18:51 moto01.txt
+-rw-r--r--  1 root root      0 Jan  8 18:51 world.txt
+-rw-r--r--  1 root root      0 Jan  8 18:51 world01.txt
+root@DESKTOP-DA2RDP0:PUB_PROJECT# git checkout -b cloud_dev03
+Switched to a new branch 'cloud_dev03'
+root@DESKTOP-DA2RDP0:PUB_PROJECT#
+root@DESKTOP-DA2RDP0:PUB_PROJECT# touch file0111
+root@DESKTOP-DA2RDP0:PUB_PROJECT#
+root@DESKTOP-DA2RDP0:PUB_PROJECT# git pull origin master
+From github.com:HarshitaMeshram/PUB_PROJECT
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+root@DESKTOP-DA2RDP0:PUB_PROJECT#
+root@DESKTOP-DA2RDP0:PUB_PROJECT# git pull origin master
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 673 bytes | 168.00 KiB/s, done.
+From github.com:HarshitaMeshram/PUB_PROJECT
+ * branch            master     -> FETCH_HEAD
+   0ab66ab..f292128  master     -> origin/master
+Updating 0ab66ab..f292128
+Fast-forward
+ data_analyst | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 data_analyst
+root@DESKTOP-DA2RDP0:PUB_PROJECT#
+root@DESKTOP-DA2RDP0:PUB_PROJECT# ll
+total 296
+drwxr-xr-x  4 root root   4096 Jan  8 19:18 ./
+drwx------ 17 root root   4096 Jan  8 18:51 ../
+drwxr-xr-x  8 root root   4096 Jan  8 19:18 .git/
+drwxr-xr-x  2 root root   4096 Jan  8 18:51 .github/
+-rw-r--r--  1 root root     12 Jan  8 18:51 CNAME
+-rw-r--r--  1 root root 265115 Jan  8 18:51 README.md
+-rw-r--r--  1 root root     11 Jan  8 19:06 data
+-rw-r--r--  1 root root     17 Jan  8 19:18 data_analyst
+-rw-r--r--  1 root root      0 Jan  8 19:14 file0111
+-rw-r--r--  1 root root      0 Jan  8 18:51 hello.txt
+-rw-r--r--  1 root root      0 Jan  8 18:51 hello01.txt
+-rw-r--r--  1 root root   3556 Jan  8 18:51 index.html
+-rw-r--r--  1 root root    768 Jan  8 18:51 logo.webp
+-rw-r--r--  1 root root      0 Jan  8 18:51 moto.txt
+-rw-r--r--  1 root root      0 Jan  8 18:51 moto01.txt
+-rw-r--r--  1 root root      0 Jan  8 18:51 world.txt
+-rw-r--r--  1 root root      0 Jan  8 18:51 world01.txt
+root@DESKTOP-DA2RDP0:PUB_PROJECT#
+
+5. Checkout to the cloud_dev01 branch locally and rebase the remote master branch of the forked repository.
+
+root@DESKTOP-DA2RDP0:harsh# git clone git@github.com:HarshitaMeshram/PUB_PROJECT.git
+fatal: destination path 'PUB_PROJECT' already exists and is not an empty directory.
+root@DESKTOP-DA2RDP0:harsh#
+root@DESKTOP-DA2RDP0:harsh# ll
+total 60
+drwxr-x--- 7 harsh harsh 4096 Jan  8 14:48 ./
+drwxr-xr-x 3 root  root  4096 Dec 18 17:01 ../
+-rw------- 1 harsh harsh   47 Jan  5 18:39 .bash_history
+-rw-r--r-- 1 harsh harsh  220 Dec 18 17:01 .bash_logout
+-rw-r--r-- 1 harsh harsh 3771 Dec 18 17:01 .bashrc
+drwxr-xr-x 7 root  root  4096 Jan  8 14:33 .git/
+-rw-r--r-- 1 harsh harsh    0 Jan  8 14:06 .motd_shown
+-rw-r--r-- 1 harsh harsh  807 Dec 18 17:01 .profile
+-rw-r--r-- 1 harsh harsh    0 Dec 18 17:03 .sudo_as_admin_successful
+-rw-r--r-- 1 root  root   154 Dec 26 11:07 NEW_FILE
+drwxr-xr-x 4 root  root  4096 Jan  5 18:11 PUB_PROJECT/
+drwxr-xr-x 3 root  root  4096 Jan  5 11:14 admin/
+-rw-r--r-- 1 root  root    99 Dec 19 16:14 file01
+-rw-r--r-- 1 root  root   121 Dec 19 16:16 file02
+-r-------- 1 root  root  1676 Dec 26 13:21 id_rsa
+drwxr-xr-x 3 root  root  4096 Jan  8 15:00 merge_confilct_demo/
+drwxr-xr-x 3 root  root  4096 Jan  4 13:35 webstore/
+root@DESKTOP-DA2RDP0:harsh# cd PUB_PROJECT/
+root@DESKTOP-DA2RDP0:PUB_PROJECT#
+root@DESKTOP-DA2RDP0:PUB_PROJECT# LL
+^Croot@DESKTOP-DA2RDP0:PUB_PROJECT# ll
+total 288
+drwxr-xr-x 4 root  root    4096 Jan  5 18:11 ./
+drwxr-x--- 7 harsh harsh   4096 Jan  8 14:48 ../
+drwxr-xr-x 8 root  root    4096 Jan  5 18:14 .git/
+drwxr-xr-x 2 root  root    4096 Jan  5 18:02 .github/
+-rw-r--r-- 1 root  root      12 Jan  5 18:02 CNAME
+-rw-r--r-- 1 root  root  265115 Jan  5 18:02 README.md
+-rw-r--r-- 1 root  root       0 Jan  5 18:07 hello.txt
+-rw-r--r-- 1 root  root       0 Jan  5 18:10 hello01.txt
+-rw-r--r-- 1 root  root    3556 Jan  5 18:02 index.html
+-rw-r--r-- 1 root  root     768 Jan  5 18:02 logo.webp
+-rw-r--r-- 1 root  root       0 Jan  5 18:07 moto.txt
+-rw-r--r-- 1 root  root       0 Jan  5 18:11 moto01.txt
+-rw-r--r-- 1 root  root       0 Jan  5 18:08 world.txt
+-rw-r--r-- 1 root  root       0 Jan  5 18:11 world01.txt
+root@DESKTOP-DA2RDP0:PUB_PROJECT#
+root@DESKTOP-DA2RDP0:PUB_PROJECT# git branch -a
+  cloud_dev01
+* cloud_dev02
+  master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/cloud_dev02
+  remotes/origin/master
+
+root@DESKTOP-DA2RDP0:PUB_PROJECT#
+root@DESKTOP-DA2RDP0:PUB_PROJECT# touch laptop
+root@DESKTOP-DA2RDP0:PUB_PROJECT#
+
+root@DESKTOP-DA2RDP0:PUB_PROJECT# git checkout cloud_dev01
+Switched to branch 'cloud_dev01'
+root@DESKTOP-DA2RDP0:PUB_PROJECT#
+
+root@DESKTOP-DA2RDP0:PUB_PROJECT# git rebase master
+Current branch cloud_dev01 is up to date.
+root@DESKTOP-DA2RDP0:PUB_PROJECT#
+root@DESKTOP-DA2RDP0:PUB_PROJECT# git status
+On branch cloud_dev01
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        laptop
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@DESKTOP-DA2RDP0:PUB_PROJECT#
+root@DESKTOP-DA2RDP0:PUB_PROJECT# git add .
+root@DESKTOP-DA2RDP0:PUB_PROJECT#
+root@DESKTOP-DA2RDP0:PUB_PROJECT# git commit -m "laptop file is added"
+[cloud_dev01 2e880af] laptop file is added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 laptop
+root@DESKTOP-DA2RDP0:PUB_PROJECT#
+root@DESKTOP-DA2RDP0:PUB_PROJECT# git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+root@DESKTOP-DA2RDP0:PUB_PROJECT#
+root@DESKTOP-DA2RDP0:PUB_PROJECT# git merge cloud_dev01
+Updating 6a6e084..2e880af
+Fast-forward
+ laptop | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 laptop
+root@DESKTOP-DA2RDP0:PUB_PROJECT#
+
+Rebase, changing the base without commit ID. Meaning that we are putting one branch on the top of another branch. Instead of merging, we just moved  cloud_dev01 on the top of master branch.
+ 
+6. Create one repository locally. Commit any 3 files to the local repository. And the revert back the commits.
+
+Horizon 
+root@DESKTOP-DA2RDP0:harsh# cd HORIZON/
+root@DESKTOP-DA2RDP0:HORIZON# ll
+total 12
+drwxr-xr-x 3 root  root  4096 Jan  9 12:11 ./
+drwxr-x--- 8 harsh harsh 4096 Jan  9 07:13 ../
+drwxr-xr-x 8 root  root  4096 Jan  9 12:14 .git/
+root@DESKTOP-DA2RDP0:HORIZON#
+root@DESKTOP-DA2RDP0:HORIZON# echo "Revert Test" >revert.txt
+root@DESKTOP-DA2RDP0:HORIZON# echo "Revert_01 Test" >revert_01.txt
+root@DESKTOP-DA2RDP0:HORIZON# echo "Revert_02 Test" >revert_02.txt
+root@DESKTOP-DA2RDP0:HORIZON#
+root@DESKTOP-DA2RDP0:HORIZON# git add .
+root@DESKTOP-DA2RDP0:HORIZON# git commit -m "3 files added"
+On branch develop
+nothing to commit, working tree clean
+root@DESKTOP-DA2RDP0:HORIZON#
+root@DESKTOP-DA2RDP0:HORIZON# git log --oneline
+687a9ca (HEAD -> develop) 3 files are added
+e8d2933 Revert "revertidsdk back"
+30bfdfa revertidsdk back
+root@DESKTOP-DA2RDP0:HORIZON#
+root@DESKTOP-DA2RDP0:HORIZON# git revert 687a9ca
+[develop 125d2dd] Revert "3 files are added"
+ 3 files changed, 3 deletions(-)
+ delete mode 100644 revert.txt
+ delete mode 100644 revert_01.txt
+ delete mode 100644 revert_02.txt
+root@DESKTOP-DA2RDP0:HORIZON#
+root@DESKTOP-DA2RDP0:HORIZON#  git revert --no-edit 687a9ca
+On branch develop
+nothing to commit, working tree clean
+root@DESKTOP-DA2RDP0:HORIZON#
+root@DESKTOP-DA2RDP0:HORIZON# git log
+commit 125d2dd50a3b02b6f4be6a5e141c0312f51d1aa9 (HEAD -> develop)
+Author: Kshitij <kshitij.meshram05@gmail.com>
+Date:   Tue Jan 9 12:20:04 2024 +0530
+
+    Revert "3 files are added"
+
+    This reverts commit 687a9ca01bfc8c34756e475f8d2a7c2e03355fd8.
+
+ 
+7. Create one local repository. commit some files to the local master branch. Checkout to master_02 branch. Create 2 more files. Add those to the staging area. Create stash area and those files. Then list and delete the stash.
+
+root@DESKTOP-DA2RDP0:~# mkdir integrate
+root@DESKTOP-DA2RDP0:~# cd integrate/
+root@DESKTOP-DA2RDP0:integrate#
+root@DESKTOP-DA2RDP0:integrate# git checkout -b main
+Switched to a new branch 'main'
+root@DESKTOP-DA2RDP0:integrate#
+root@DESKTOP-DA2RDP0:integrate# touch file01
+root@DESKTOP-DA2RDP0:integrate# touch file02
+root@DESKTOP-DA2RDP0:integrate#
+root@DESKTOP-DA2RDP0:integrate# git add .
+root@DESKTOP-DA2RDP0:integrate# git commit -m "2 files added"
+[main (root-commit) 1814e4f] 2 files added
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 integrate/file01
+ create mode 100644 integrate/file02
+root@DESKTOP-DA2RDP0:integrate#
+root@DESKTOP-DA2RDP0:integrate# git checkout -b master_02
+Switched to a new branch 'master_02'
+root@DESKTOP-DA2RDP0:integrate#
+root@DESKTOP-DA2RDP0:integrate# touch data01
+root@DESKTOP-DA2RDP0:integrate# touch data02
+root@DESKTOP-DA2RDP0:integrate#
+root@DESKTOP-DA2RDP0:integrate# git add .
+root@DESKTOP-DA2RDP0:integrate#
+root@DESKTOP-DA2RDP0:integrate# git stash list
+root@DESKTOP-DA2RDP0:integrate#
+root@DESKTOP-DA2RDP0:integrate# git status
+On branch master_02
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   data01
+        new file:   data02
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../.aws/
+        ../.bash_history
+        ../.bashrc
+        ../.gitconfig
+        ../.hushlogin
+        ../.lesshst
+        ../.motd_shown
+        ../.profile
+        ../.selected_editor
+        ../.ssh/
+        ../.sudo_as_admin_successful
+        ../.viminfo
+        ../01_demo.sh
+        ../Cloud/
+        ../PUB_PROJECT/
+        ../admin/
+        ../black/
+        ../cloud
+        ../dark/
+        ../data/
+        ../demo.sh
+        ../demo02
+        ../demo03
+        ../demo04
+        ../demo05
+        ../demo06
+        ../demo07
+        ../demo08
+        ../demo09
+        ../ex.sh
+        ../horizon/
+        ../merge_confilct_demo/
+        ../web/
+        ../webstore/
+
+root@DESKTOP-DA2RDP0:integrate# git stash
+Saved working directory and index state WIP on master_02: 1814e4f 2 files added
+root@DESKTOP-DA2RDP0:integrate#
+root@DESKTOP-DA2RDP0:integrate# git stash list
+stash@{0}: WIP on master_02: 1814e4f 2 files added
+root@DESKTOP-DA2RDP0:integrate#
+root@DESKTOP-DA2RDP0:integrate# git stash drop
+Dropped refs/stash@{0} (45db12faa8b37316729693d02ed1051add8d6524)
+root@DESKTOP-DA2RDP0:integrate#
+root@DESKTOP-DA2RDP0:integrate#
+
+ 
+8. Create a local repository, initialise it and create 3 branches: develop, hotfix and release. Checkout to hotfix branch and commit cloudethix.txt and once committed amend the commit message.
+
+root@DESKTOP-DA2RDP0:~# mkdir docker
+root@DESKTOP-DA2RDP0:~# cd docker
+root@DESKTOP-DA2RDP0:docker#
+root@DESKTOP-DA2RDP0:docker# git checkout -b develop
+Switched to a new branch 'develop'
+root@DESKTOP-DA2RDP0:docker#
+root@DESKTOP-DA2RDP0:docker# git checkout main
+Switched to branch 'main'
+root@DESKTOP-DA2RDP0:docker#
+root@DESKTOP-DA2RDP0:docker# git checkout -b hotfix
+Switched to a new branch 'hotfix'
+root@DESKTOP-DA2RDP0:docker#
+root@DESKTOP-DA2RDP0:docker# git checkout main
+Switched to branch 'main'
+root@DESKTOP-DA2RDP0:docker#
+root@DESKTOP-DA2RDP0:docker# git checkout -b release
+Switched to a new branch 'release'
+root@DESKTOP-DA2RDP0:docker#
+root@DESKTOP-DA2RDP0:docker# git checkout hotfix
+Switched to branch 'hotfix'
+root@DESKTOP-DA2RDP0:docker#
+root@DESKTOP-DA2RDP0:docker# touch cloudethix.txt
+root@DESKTOP-DA2RDP0:docker# git add cloudethix.txt
+root@DESKTOP-DA2RDP0:docker# git commit -m "cloudethix.txt is adding"
+[hotfix 0240baf] cloudethix.txt is adding
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 docker/cloudethix.txt
+root@DESKTOP-DA2RDP0:docker#
+root@DESKTOP-DA2RDP0:docker# git log --oneline
+0240baf (HEAD -> hotfix) cloudethix.txt is adding
+1814e4f (release, master_02, main, develop) 2 files added
+root@DESKTOP-DA2RDP0:docker#
+root@DESKTOP-DA2RDP0:docker#  git commit --amend -m "Adding amend.txt file to
+> enable login settings.
+> ^C
+root@DESKTOP-DA2RDP0:docker# git commit --amend -m "cloudethix.txt is adding is modified"
+[hotfix 0106a74] cloudethix.txt is adding is modified
+ Date: Tue Jan 9 13:12:04 2024 +0530
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 docker/cloudethix.txt
+root@DESKTOP-DA2RDP0:docker#
+root@DESKTOP-DA2RDP0:docker#
+
+
+
+
+
+
+
+
